@@ -1,0 +1,25 @@
+{
+	"extends": "af-tsconfig",
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": true,
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"target": "es2017",
+		"sourceMap": true,
+		"outDir": "./dist",
+		"baseUrl": "./",
+		"incremental": true,
+		"noImplicitAny": false,
+		"strictBindCallApply": false,
+		"paths": {
+			"$src": ["./src"],
+			"$src/*": ["./src/*"],
+			"$lib": ["./lib"],
+			"$lib/*": ["./lib/*"]
+		}
+	},
+	"include": ["src", "lib"]
+}
