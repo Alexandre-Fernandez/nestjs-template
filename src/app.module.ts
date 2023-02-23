@@ -1,15 +1,17 @@
 import { Module } from "@nestjs/common"
+import { RouterModule } from "@nestjs/core"
 import { ConfigModule } from "@nestjs/config"
-import { MongooseModule } from "@nestjs/mongoose"
-import { AppService } from "$src/app.service"
-import { AppController } from "$src/app.controller"
+import { validate } from "$src/env.validate"
 
 @Module({
 	imports: [
-		ConfigModule.forRoot({}),
-		MongooseModule.forRoot(process.env["MONGO_URL"] || ""),
+		ConfigModule.forRoot({ validate }),
+		RouterModule.register([
+			{
+				path: "api",
+				children: [],
+			},
+		]),
 	],
-	controllers: [AppController],
-	providers: [AppService],
 })
 export class AppModule {}

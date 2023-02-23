@@ -36,6 +36,8 @@ lerna-debug.log*
 
 # Docker
 .db
+docker-compose.*
+!docker-compose.dist
 
 # Environment
 .env
